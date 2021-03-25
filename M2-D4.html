@@ -32,9 +32,14 @@
 
 <body>
     <div class="container pl-0">
-        <header>
-            <h1>WELCOME TO THE STRIVE TEAM GENERATOR!</h1>
-        </header>
+        <div class="row">
+            <div class="col-8">
+                <header>
+                    <h1>WELCOME TO THE STRIVE TEAM GENERATOR!</h1>
+                </header>
+            </div>
+            <div class="col-4"> <button type="button" class="btn btn-info" onclick="location.reload()">Reset</button></div>
+        </div>
     </div>
 
 
@@ -49,10 +54,8 @@
                     </div>
                 </div>
             </form>
-
-
         </div>
-        <div class="container">
+        <div class="container" id="names">
             <div class="row mt-5">
                 <h2>Available Names</h2>
                 <div class="col-12 p-0">
