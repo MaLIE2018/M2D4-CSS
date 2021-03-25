@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+    WELCOME TO THE STRIVE TEAM GENERATOR!
+
+    In this app you will generate teams and assign the participants to them.
+    You will use the Bootstrap components for the elements of your app.
+
+    The features are the following:
+    - The user should be able to add a list of names, find a way to get the user input 
+       and fill a list with the new name.
+    - The user should be able to set the number of teams he wants, so that they will be generated. 
+     A team is just another list to be displayed.
+    - An "Assign" button will be required in order to launch the team generation functionality.
+    - Every time the user clicks on the "Assign" button, a random name is placed in a team 
+    and removed from the initial list.
+    - Each team should be inside a "column" to be responsive.
+    - [EXTRA] Create a button to remove a user from a team, and putting him back in the main list, 
+    waiting to be reassigned.
+    - [EXTRA] Create a button to reset the state of the app.
+-->
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container pl-0">
+        <header>
+            <h1>WELCOME TO THE STRIVE TEAM GENERATOR!</h1>
+        </header>
+    </div>
+
+
+    <section class="add names">
+        <div class="container pl-0 mt-5">
+            <h2>Add Names</h2>
+            <form>
+                <div class="input-group mb-3">
+                    <input type="text" id="namesInput" class="form-control" placeholder="Add names seperated by a comma" aria-label="Recipient's username" aria-describedby="button-addon2" required="true">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary btn-light" type="submit" id="button-addNames">Add to the List</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+        <div class="container">
+            <div class="row mt-5">
+                <h2>Available Names</h2>
+                <div class="col-12 p-0">
+                    <ul id="nameList"></ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="teams">
+        <div class="container pl-0">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Teams</h2>
+                </div>
+                <div class="col-5">
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="number" id="numOfTeams" class="form-control" placeholder="Number of Teams" min="1" max="12" required="true">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary btn btn-light" type="submit" id="button-createTeam">Create</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="col"><button type="button" class="btn btn-success" id="button-assignMate">Assign</button></div>
+            </div>
+            <div class="row" id="teamRow"></div>
+    </section>
+
+
+
+
+
+    <script src="./assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+
+</html>
