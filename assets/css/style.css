@@ -7,5 +7,20 @@ body {
 }
 
 #names {
-    height: 350px;
+    height: 200px;
+}
+
+#resetButton {
+    top: 20px;
+    right: 15px;
+}
+
+h2,
+h1 {
+    color: #B9BCB9;
+}
+
+#nameList {
+    max-height: 150px;
+    overflow: auto;
 }

@@ -7,7 +7,7 @@ const getNames = (event) => {
     tmpNames = input.value.split(",")
     addtoList(tmpNames)
     names = names.concat(tmpNames)
-    input.innerHTML = ""
+    input.value = ""
 }
 
 const addtoList = (tmpNames) => {
@@ -25,6 +25,7 @@ const createTeamCard = (event) => {
     event.preventDefault()
     let teamRow = document.getElementById("teamRow")
     let numOfTeam = document.getElementById("numOfTeams").value
+    document.getElementById("numOfTeams").value = ""
     for (let i = 0; i < numOfTeam; i++) {
         let card = `<div class="col mt-3"><div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -34,15 +35,17 @@ const createTeamCard = (event) => {
                 <button type="button" class="btn btn-danger" onclick="removeLast(event)">Remove</button>
             </div>
         </div></div>`
-        teamRow.innerHTML += teamRow.innerHTML + card
-        card = ""
+        teamRow.innerHTML += card
     }
 }
 
 const removeLast = (event) => {
     let card = event.currentTarget.parentElement
     let list = card.querySelector("ul")
-
+    let tmpNames = []
+    tmpNames.push(list.lastChild.innerText)
+    names.push(list.lastChild.innerText)
+    addtoList(tmpNames)
     list.removeChild(list.lastChild)
 
 }
@@ -70,6 +73,7 @@ const assignMate = () => {
         ul.removeChild(name)
     }
 }
+
 
 window.onload = () => {
     let addNameButton = document.getElementById("button-addNames")
